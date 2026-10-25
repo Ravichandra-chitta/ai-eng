@@ -9,12 +9,12 @@ from ai_eng.anthropic_client import AnthropicClient
 from ai_eng.llm import Message
 
 SAMPLES: dict[str, str] = {
-    "english": "The quick brown fox jumps over the lazy dog.",
-    "numbers": "1234567890 3.14159265358979 2026-10-24T11:53:00+05:30",
-    "python": "def add(a: int, b: int) -> int:\n    return a + b\n",
-    "json": '{"user_id": 42, "active": true, "tags": ["a", "b"]}',
-    "hindi": "मुझे कृत्रिम बुद्धिमत्ता इंजीनियर बनना है।",
-    "telugu": "నేను AI ఇంజనీర్ కావాలనుకుంటున్నాను.",
+    "english": "That's a classic pangram, a sentence that contains every letter of the English alphabet at least once. It's often used to test fonts and keyboards. What would you like to do with it? I can translate it, analyze it, or help with something else.",
+    # "numbers": "1234567890 3.14159265358979 2026-10-24T11:53:00+05:30",
+    # "python": "def add(a: int, b: int) -> int:\n    return a + b\n",
+    # "json": '{"user_id": 42, "active": true, "tags": ["a", "b"]}',
+    # "hindi": "मुझे कृत्रिम बुद्धिमत्ता इंजीनियर बनना है।",
+    # "telugu": "నేను AI ఇంజనీర్ కావాలనుకుంటున్నాను.",
 }
 
 
@@ -36,7 +36,7 @@ def main() -> None:
     baseline = client.count_tokens([Message(role="user", content="hi")])
     print(f"\nFraming overhead (one-word message): {baseline} tokens")
 
-    reply = client.complete([Message(role="user", content="Explain a token in one sentence.")])
+    reply = client.complete([Message(role="user", content="The quick brown fox jumps over the lazy dog.")])
     usage = client.last_usage
     print(f"\nReply: {reply}")
     if usage:

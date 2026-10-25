@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug lab01_tokens (uv)",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "ai_eng.labs.lab01_tokens",
+            "python": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+            "pythonArgs": ["-Xfrozen_modules=off"],
+            "cwd": "${workspaceFolder}",
+            "envFile": "${workspaceFolder}\\.env",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        }
+    ]
+}
